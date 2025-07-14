@@ -1,14 +1,18 @@
-# C - printf ![Project Badge](https://img.shields.io/badge/Project-C%20printf-blue)
+# _printf
 
-## 📌 Description
-This project is a simplified custom implementation of the standard C `printf` function. The custom function is named `_printf` and supports basic formatted output to the standard output stream.
+Custom implementation of the C standard `printf` function.  
+This project was done for Holberton School SEIP curriculum.
 
-## ⚙️ Supported Format Specifiers
+## Features
 
-- `%c` : prints a single character
-- `%s` : prints a string
-- `%%` : prints a percent sign
+- Supports these format specifiers: `%c`, `%s`, `%%`, `%d`, `%i`
+- Uses variadic functions with `stdarg.h`
+- Writes output to standard output with `write()`
 
-### ✅ Function Prototype
-```c
-int _printf(const char *format, ...);
+## Compilation
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+
+## Author
+
+**Kevin Voka**
