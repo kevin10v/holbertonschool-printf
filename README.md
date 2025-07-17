@@ -1,19 +1,74 @@
-# _printf
+# _printf – Custom printf Implementation
 
-Custom implementation of the C standard `printf` function.  
-This project was done for Holberton School SEIP curriculum.
+A complete recreation of printf's core functionality developed by **Kevin Voka** and **Renis Vukaj** for Holberton School. This implementation handles all basic formatting needs while demonstrating advanced C programming techniques with variadic functions.
 
-## Features
+```c
+int _printf(const char *format, ...);
+```
 
-- Supports these format specifiers: `%c`, `%s`, `%%`, `%d`, `%i`
-- Uses variadic functions with `stdarg.h`
-- Writes output to standard output with `write()`
+## Description
+Our `_printf` faithfully reproduces the standard library's behavior for:
+- Character output (`%c`)
+- String printing (`%s`)
+- Integer display (`%d`, `%i`)
+- Percent sign escaping (`%%`)
+- Proper NULL string handling (prints "(null)")
+- Comprehensive error detection (returns -1 when needed)
+
+## Format Specifiers
+
+```
+Specifier | Output          | Example Usage    | Output Example
+----------|-----------------|------------------|---------------
+%c       | Single character| _printf("%c", 'A') | A
+%s       | String          | _printf("%s", "Hi")| Hi
+%d/%i    | Signed integer  | _printf("%d", -42) | -42
+%%       | Percent sign    | _printf("%%")      | %
+```
+
+## File Structure
+
+```
+File               | Purpose
+-------------------|---------------------------------------
+main.h             | Header with prototypes
+_printf.c          | Main printf logic
+handler.c          | Specifier handling
+main.c             | Test cases
+```
 
 ## Compilation
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+```
+
+## Examples
+
+```c
+_printf("Hello %s! Score: %d%%\n", "World", 95);
+```
+Output:
+```
+Hello World! Score: 95%
+```
+
+## Edge Cases
+
+```
+Case                | Behavior
+--------------------|----------------------
+NULL format         | Returns -1
+Lone %              | Returns -1
+NULL string         | Prints "(null)"
+Unknown specifier   | Prints literally
+```
 
 ## Authors
 
-**Kevin Voka**
-**Renis Vukaj**
+```
+Kevin Voka   | https://github.com/kevin10v
+Renis Vukaj  | https://github.com/renisv
+```
+
+*Holberton School Project • July 2025*
