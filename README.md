@@ -28,14 +28,12 @@ Specifier | Output          | Example Usage    | Output Example
 
 ## File Structure
 
-```
-File               | Purpose
--------------------|---------------------------------------
-main.h             | Header with prototypes
-_printf.c          | Main printf logic
-handler.c          | Specifier handling
-main.c             | Test cases
-```
+| File               | Purpose |
+|--------------------|---------|
+| [main.h](https://github.com/kevin10v/holbertonschool-printf/blob/main/main.h) | Header with prototypes |
+| [_printf.c](https://github.com/kevin10v/holbertonschool-printf/blob/main/_printf.c) | Main printf logic |
+| [handlers.c](https://github.com/kevin10v/holbertonschool-printf/blob/main/handlers.c) | Specifier handling |
+| [main.c](https://github.com/kevin10v/holbertonschool-printf/blob/main/main.c) | Test cases |
 
 ## Compilation
 
