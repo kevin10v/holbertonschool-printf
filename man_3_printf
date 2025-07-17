@@ -1,0 +1,88 @@
+.TH _PRINTF 3 "July 2025" "Holberton" "Custom printf"
+.SH NAME
+_printf \- custom formatted output conversion
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+.PP
+.BI "int _printf(const char *" format ", ...);"
+.fi
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a
+.I format
+string and returns the number of characters printed.
+.PP
+Supported conversions:
+.TP
+.B %c
+Prints a single character
+.TP
+.B %s
+Prints a string (converts NULL to "(null)")
+.TP
+.B %d, %i
+Prints a signed decimal integer
+.TP
+.B %%
+Prints a literal '%' character
+.TP
+.B Other
+Prints '%' followed by the specifier (e.g. "%z" → "%z")
+.SH RETURN VALUE
+Number of characters printed (excluding null byte), or
+.B -1
+if:
+.RS
+.IP \(bu 3
+.I format
+is NULL
+.IP \(bu 3
+Format string ends with lone '%'
+.RE
+.SH EXAMPLES
+.nf
+/* Basic usage */
+_printf("Hello %s! Age: %d\\n", "World", 25);
+
+/* Edge cases */
+_printf("%s", NULL);   /* prints "(null)" */
+_printf("%%");         /* prints "%" */
+_printf("%z");         /* prints "%z" */
+.fi
+.SH FILES
+.PD 0
+.TP 15
+.I main.h
+Function prototypes and includes
+.TP
+.I _printf.c
+Main implementation
+.TP
+.I handlers.c
+Specifier handling logic
+.TP
+.I main.c
+Test cases
+.PD
+.SH DIAGNOSTICS
+This implementation does not support:
+.RS
+.IP \(bu 3
+Field width/precision
+.IP \(bu 3
+Flag characters (+, -, 0, etc.)
+.IP \(bu 3
+Unsigned/hex/octal conversions
+.IP \(bu 3
+Floating-point numbers
+.RE
+.SH AUTHORS
+Kevin Voka <https://github.com/kevin10v>
+.br
+Renis Vukaj <https://github.com/renisv>
+.SH SEE ALSO
+.BR printf (3)
+.SH BUGS
+Report issues at: <https://github.com/kevin10v/holbertonschool-printf>
