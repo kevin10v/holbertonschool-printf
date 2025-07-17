@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -9,25 +8,25 @@
  */
 int handle_format(char specifier, va_list args)
 {
-char *str;
-char c;
+        char *str;
+        char c;
 
-switch (specifier)
-{
-case 'c':
-c = va_arg(args, int);
-return (print_char(c));
-case 's':
-str = va_arg(args, char *);
-return (print_string(str));
-case '%':
-return (print_char('%'));
-case 'd':
-case 'i':
-return (print_int(va_arg(args, int)));
-default:
-return (-1);
-}
+        switch (specifier)
+        {
+        case 'c':
+                c = va_arg(args, int);
+                return (print_char(c));
+        case 's':
+                str = va_arg(args, char *);
+                return (print_string(str));
+        case '%':
+                return (print_char('%'));
+        case 'd':
+        case 'i':
+                return (print_int(va_arg(args, int)));
+        default:
+                return (-1);
+        }
 }
 
 /**
@@ -37,7 +36,7 @@ return (-1);
  */
 int print_char(char c)
 {
-return (write(1, &c, 1));
+        return (write(1, &c, 1));
 }
 
 /**
@@ -47,17 +46,17 @@ return (write(1, &c, 1));
  */
 int print_string(char *str)
 {
-int count = 0;
+        int count = 0;
 
-if (!str)
-str = "(null)";
+        if (!str)
+                str = "(null)";
 
-while (*str)
-{
-write(1, str++, 1);
-count++;
-}
-return (count);
+        while (*str)
+        {
+                write(1, str++, 1);
+                count++;
+        }
+        return (count);
 }
 
 /**
@@ -67,23 +66,23 @@ return (count);
  */
 int print_int(int n)
 {
-int count = 0;
-unsigned int num;
+        int count = 0;
+        unsigned int num;
 
-if (n < 0)
-{
-count += write(1, "-", 1);
-num = -n;
-}
-else
-{
-num = n;
-}
+        if (n < 0)
+        {
+                count += write(1, "-", 1);
+                num = -n;
+        }
+        else
+        {
+                num = n;
+        }
 
-if (num / 10)
-count += print_int(num / 10);
+        if (num / 10)
+                count += print_int(num / 10);
 
-count += print_char((num % 10) + '0');
+        count += print_char((num % 10) + '0');
 
-return (count);
+        return (count);
 }

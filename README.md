@@ -13,6 +13,7 @@ This project was done for Holberton School SEIP curriculum.
 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
-## Author
+## Authors
 
 **Kevin Voka**
+**Renis Vukaj**
