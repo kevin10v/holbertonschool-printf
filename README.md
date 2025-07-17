@@ -18,12 +18,12 @@ Our `_printf` faithfully reproduces the standard library's behavior for:
 ## Format Specifiers
 
 ```
-Specifier | Output          | Example Usage    | Output Example
-----------|-----------------|------------------|---------------
-%c       | Single character| _printf("%c", 'A') | A
-%s       | String          | _printf("%s", "Hi")| Hi
-%d/%i    | Signed integer  | _printf("%d", -42) | -42
-%%       | Percent sign    | _printf("%%")      | %
+Specifier | Output          | Example Usage      | Output Example
+----------|-----------------|--------------------|---------------
+%c        | Single character| _printf("%c", 'A') | A
+%s        | String          | _printf("%s", "Hi")| Hi
+%d/%i     | Signed integer  | _printf("%d", -42) | -42
+%%        | Percent sign    | _printf("%%")      | %
 ```
 
 ## File Structure
