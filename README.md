@@ -35,6 +35,9 @@ Specifier | Output          | Example Usage      | Output Example
 | [handlers.c](https://github.com/kevin10v/holbertonschool-printf/blob/main/handlers.c) | Specifier handling |
 | [main.c](https://github.com/kevin10v/holbertonschool-printf/blob/main/main.c) | Test cases |
 
+
+
+
 ![Flow chart](https://github.com/renisv/practice/blob/main/deepseek_mermaid_20250718_6bc370.png)
 
 
